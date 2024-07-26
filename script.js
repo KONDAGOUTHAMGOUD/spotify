@@ -101,7 +101,7 @@ function likedornot(album,song)
 async function getSongs(folder) {
     currfolder = folder;
     songs = []
-    let a = await fetch(`https://api.github.com/repos/swarajkoppu/spotify/contents/${folder}/`, {
+    let a = await fetch(`https://api.github.com/repos/KONDAGOUTHAMGOUD/spotify/contents/${folder}/`, {
         headers: {
             'Authorization': `token ${token}`
         }
@@ -162,7 +162,7 @@ async function getSongs(folder) {
 }
 
 async function fetchFolderNames() {
-    const apiUrl = 'https://api.github.com/repos/swarajkoppu/spotify/contents/songs/';
+    const apiUrl = 'https://api.github.com/repos/KONDAGOUTHAMGOUD/spotify/contents/songs/';
     try {
         const response = await fetch(apiUrl, {
             headers: {
@@ -184,7 +184,7 @@ async function fetchFolderNames() {
     }
 }
 async function fetchInfoJson(folder) {
-    const owner = 'swarajkoppu';
+    const owner = 'KONDAGOUTHAMGOUD';
     const repo = 'spotify';
     const folderPath = `songs/${folder}`;
     const fileName = 'info.json';
@@ -307,7 +307,7 @@ async function displayAlbums() {
 
 const playmusic = (album, track, pause = false) => {
     console.log(currfolder)
-    currentsong.src = `https://raw.githubusercontent.com/swarajkoppu/spotify/main/${album}/${track}`;
+    currentsong.src = `https://raw.githubusercontent.com/KONDAGOUTHAMGOUD/spotify/main/${album}/${track}`;
     console.log(currentsong.src)
     if (!pause) {
         playPromise = currentsong.play()
